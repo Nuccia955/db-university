@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/partials/scripts/get_departments.php' ?>
+<?php require_once __DIR__ . '/partials/scripts/get_degrees.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
     <title>University Departments</title>
 </head>
 <body>
-    <h1 class="my-3 text-uppercase text-center">Departments</h1>
+    <h1 class="my-3 text-uppercase text-center">Degrees</h1>
     <main class="container">
         <table class="table">
             <thead>
@@ -23,15 +23,15 @@
                 </tr>
             </thead>
             <tbody>
-            <?php foreach($departments as $department) { ?>
+            <?php foreach($degrees as $degree) { ?>
                 <tr>
-                    <td><?php echo $department['id']?></td>
-                    <td><?php echo $department['name']?></td>
-                    <td><?php echo $department['address']?></td>
-                    <td><?php echo $department['email']?></td>
-                    <td><?php echo $department['website']?></td>
+                    <td><?php echo $degree['id']?></td>
+                    <td><?php echo $degree['name']?></td>
+                    <td><?php echo $degree['address']?></td>
+                    <td><?php echo $degree['email']?></td>
+                    <td><?php echo $degree['website']?></td>
                     <td>
-                        <a href="./show.php?id=<?php echo $department['id']?>">View</a>
+                        <a href="./courses.php?id=<?php echo $degree['id']?>">View</a>
                     </td>
                 </tr>
             <?php } ?>

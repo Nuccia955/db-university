@@ -2,19 +2,19 @@
 
 require_once __DIR__ . '/database.php';
 
-//get departments
-$sql = "SELECT * 
-        FROM `departments`";
+$sql = "SELECT *
+        FROM `degrees`
+        WHERE `department_id` = {$_GET['id']}
+        ";
 $result = $cnx->query($sql);
 
-//gen the array of departments
-$departments = [];
+$degrees = [];
 if($result && $result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        $departments[] = $row;
+        $degrees[] = $row;
     }
 } else {
-    echo 'Query error';
+    echo 'Query failed';
 }
 
 $cnx->close();

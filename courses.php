@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/partials/scripts/get_departments.php' ?>
+<?php require_once __DIR__ . '/partials/scripts/get_courses.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,29 +10,28 @@
     <title>University Departments</title>
 </head>
 <body>
-    <h1 class="my-3 text-uppercase text-center">Departments</h1>
+    <h1 class="my-3 text-uppercase text-center">Courses</h1>
     <main class="container">
         <table class="table">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Website</th>
+                    <th>Period</th>
+                    <th>Year</th>
+                    <th>CFU</th>
+                    <th>Teacher</th>
                 </tr>
             </thead>
             <tbody>
-            <?php foreach($departments as $department) { ?>
+            <?php foreach($courses as $course) { ?>
                 <tr>
-                    <td><?php echo $department['id']?></td>
-                    <td><?php echo $department['name']?></td>
-                    <td><?php echo $department['address']?></td>
-                    <td><?php echo $department['email']?></td>
-                    <td><?php echo $department['website']?></td>
-                    <td>
-                        <a href="./show.php?id=<?php echo $department['id']?>">View</a>
-                    </td>
+                    <td><?php echo $course['id']?></td>
+                    <td><?php echo $course['name']?></td>
+                    <td><?php echo $course['period']?></td>
+                    <td><?php echo $course['year']?></td>
+                    <td><?php echo $course['cfu']?></td>
+                    <td><?php echo $course['teacher_name'] . ' ' . $course['teacher_surname']?></td>
                 </tr>
             <?php } ?>
             </tbody>
